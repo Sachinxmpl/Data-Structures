@@ -12,7 +12,6 @@ public class Typepromotion {
 
                         int milion = 323_000_000 ; 
                         
-
                         byte b = 42 ; 
                         char c = 'a' ; 
                         short s= 1024 ; 
