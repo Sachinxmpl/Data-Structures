@@ -1,12 +1,15 @@
 public class floor_ofa_number {
             public static void main(String[] args) {
                         int[] nums= {2,3,5,9,14,16,18} ; 
-                        System.out.println(FloorOfANumber (nums , 13)) ;
+                        System.out.println(FloorOfANumber (nums , 1)) ;
             }
 
             static int  FloorOfANumber (int[] arr , int target){
                         int start = 0 ; 
                         int end = arr.length - 1; 
+                        if(target < arr[start]){
+                                    return -1 ; 
+                        }
                         while(start <= end){
                                     int mid = start + (end-start)/2 ; 
                                     if(arr[mid] > target){
@@ -22,3 +25,7 @@ public class floor_ofa_number {
                         return arr[end] ; 
             }
 }
+
+
+//time complexity is O(logN)
+//space complexity is O(1)
