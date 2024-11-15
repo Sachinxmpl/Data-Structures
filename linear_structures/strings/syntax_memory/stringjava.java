@@ -8,7 +8,7 @@ public class stringjava {
                 a = "khatri";
 
 
-                String 
+               
         }
 }
 

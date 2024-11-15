@@ -9,7 +9,7 @@ public class comparision {
                 System.out.println(a == b) ; // true Stringpool 
 
 
-                //?How to create difference string object of same value  , use new keyword
+                //?How to create different string object of same value  , use new keyword
 
                 String c = new String("Kunal");
                 String d = new String("Kunal");
