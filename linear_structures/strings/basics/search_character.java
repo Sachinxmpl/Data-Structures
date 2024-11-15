@@ -1,3 +1,5 @@
+package linear_structures.strings.basics;
+
 public class search_character {
             public static void main(String[] args) {
                         String name = "Sachin";
