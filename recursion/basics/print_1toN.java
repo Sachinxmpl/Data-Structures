@@ -22,4 +22,7 @@ public class print_1toN {
                 System.out.println(n);
         }
 
+        // time complexity 0(n)
+        // space complexity 0(n)
+
 }
