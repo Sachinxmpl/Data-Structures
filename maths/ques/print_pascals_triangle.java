@@ -8,9 +8,18 @@ public class print_pascals_triangle {
                 int n = in.nextInt() ; 
                 in.close();
                 printPascalTriangle(n) ; 
+                int ans = findSumOfNthRowInPascalsTriange(5);
+                System.out.println(ans);
               
         }
-
+        static int findSumOfNthRowInPascalsTriange(int n){
+                int i = n- 1; 
+                int sum = 0 ; 
+                for ( int j = 0 ;j <= i ; j++){
+                        sum = sum + fact(i)/(fact(j)*fact(i-j));
+                }       
+                return sum ; 
+        }
         static void printPascalTriangle(int n ){
                 for ( int i = 0 ; i < n ; i++){
                         for ( int j = 0 ; j <= i ; j++){
