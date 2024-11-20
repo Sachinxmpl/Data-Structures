@@ -25,6 +25,8 @@ class Student{
                 this.age = age ; 
                 this.name = name ; 
         }
+
+        //shallow copy construcot 
         Student(Student other){
                 this.name = other.name ; 
                 this.age = other.age ; 
