@@ -6,9 +6,8 @@ public class stringjava {
 
                 String a = "sachin" ; 
                 a = "khatri";
-
-
-               
+                
+                System.out.println(a.length());
         }
 }
 
@@ -38,3 +37,6 @@ public class stringjava {
 // a = "khatri"
 
 // Here i am not modifying object "Sachin" , new object "khatri" is created and now a  just points to "Khatri" not "Sachin"
+
+
+// String is a class with a method .length() to a.length() gives the length of string object a points to 
