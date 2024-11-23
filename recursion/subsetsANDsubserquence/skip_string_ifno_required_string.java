@@ -2,7 +2,7 @@ package Data_Structures_and_algorithms.recursion.subsetsANDsubserquence;
 
 public class skip_string_ifno_required_string {
     public static void main(String[] args) {
-        String str = "Hi apple is app";
+        String str = "Hi apples is appdf";
         System.out.println(skip(str));
     }
 
@@ -16,7 +16,8 @@ public class skip_string_ifno_required_string {
         }else{
             return str.charAt(0) + skip(str.substring(1));
         }
-
-
     }
 }
+
+// space complexity O(m) m is length of string 
+// time complexity is O(m2)  sustring methods also take O(m) time 
