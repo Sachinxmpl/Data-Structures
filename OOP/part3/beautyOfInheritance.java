@@ -21,6 +21,10 @@ class Box{
         this.length = length ; 
         this.breadth = breadth;
     }
+    public Box(Box other) {
+        this.length = other.length;
+        this.breadth = other.breadth;
+    }
 }
 
 class Boxweight extends Box{
@@ -29,6 +33,11 @@ class Boxweight extends Box{
     public Boxweight(int l , int b , int w){
         super(l,b);
         weight = w ; 
+    }
+
+    Boxweight(Boxweight other){
+        super(other);
+        this.weight = other.weight;
     }
 
     public void print(){
