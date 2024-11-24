@@ -1,4 +1,4 @@
-package maths.problems;
+package maths.bitManipulation.problems;
 
 public class find_nonrepeatingElement_inArray {
         public static void main(String[] args) {
