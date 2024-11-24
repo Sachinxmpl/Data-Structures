@@ -15,10 +15,14 @@ public class StaticBlock {
     public static void main(String[] args) {
         StaticBlock obj= new StaticBlock();
         System.out.println(StaticBlock.a + "  " + StaticBlock.b);
+
+        StaticBlock.b += 3; 
+        StaticBlock obj2 = new StaticBlock();
+        System.out.println(StaticBlock.a + " " +  StaticBlock.b);
     }
 }
 
 
 //As soon as class is loaded static elements are loaded/run first 
 //Static block generally used to initialize static varaibles 
-//Static bloack runs only once when the class is laoded fist time 
+//Static bloack runs only once when the class is loaded fist time 
