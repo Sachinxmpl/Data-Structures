@@ -15,5 +15,7 @@ public class main {
         ll.insertLast(9);
         ll.insertLast(99);
         ll.displayNode();
+
+        System.out.println(ll.getNodeValue(3));
     }
 }

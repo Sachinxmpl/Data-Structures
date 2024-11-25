@@ -55,6 +55,25 @@ public class LinkedList {
 
     }
 
+    
+    
+    public Node getNode(int index){
+        Node temp = head ; 
+        for ( int i = 0 ; i < index ; i++){
+            temp = temp.next ; 
+        }
+        return temp ; 
+    }
+    public int getNodeValue(int index){
+        Node temp = head ; 
+        for ( int i = 0 ; i < index ; i++){
+            temp = temp.next ; 
+        }
+        return temp.value ; 
+    }
+
+
+
     public void displayNode(){
         Node temp = head ; 
         while(temp != null){
