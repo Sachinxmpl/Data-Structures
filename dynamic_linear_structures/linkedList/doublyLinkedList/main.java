@@ -17,5 +17,8 @@ public class main {
         ll.displayNode();
 
         System.out.println(ll.getNodeValue(3));
+
+        ll.insertIndex(77, 3);
+        ll.displayNode();
     }
 }

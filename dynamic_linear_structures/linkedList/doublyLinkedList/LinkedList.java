@@ -3,100 +3,124 @@ package dynamic_linear_structures.linkedList.doublyLinkedList;
 public class LinkedList {
     private int size;
     private Node head;
-    private Node tail; //lets not use tail 
+    private Node tail; // lets not use tail
 
     LinkedList() {
         this.size = 0;
     }
 
-    public int getSize(){
+    public int getSize() {
         return this.size;
     }
 
-    public void insertFirst(int value){
+    public void insertFirst(int value) {
         Node newNode = new Node(value);
-        if(head == null){
-            head = tail = newNode ; 
-            head.previous = null ; 
+        if (head == null) {
+            head = tail = newNode;
+            head.previous = null;
             head.next = null;
-            size+=1;
-            return ; 
+            size += 1;
+            return;
         }
-        newNode.next = head ; 
-        newNode.previous = null ; 
-        head.previous = newNode ; 
-        head = newNode ; 
-        size+=1;
+        newNode.next = head;
+        newNode.previous = null;
+        head.previous = newNode;
+        head = newNode;
+        size += 1;
     }
 
-    public void insertLast(int value){
+    public void insertLast(int value) {
         Node newNode = new Node(value);
-        
-        //move to last node 
-        Node temp = head ;
-        Node last = temp ; 
-        while(temp != null){
-            last = temp ; 
-            temp = temp.next ; 
+
+        // move to last node
+        Node temp = head;
+        Node last = temp;
+        while (temp != null) {
+            last = temp;
+            temp = temp.next;
         }
 
-        if(head == null){
+        if (head == null) {
             head = tail = newNode;
-            head.previous = null ; 
-            head.next = null ; 
-            size ++ ; 
-            return ; 
+            head.previous = null;
+            head.next = null;
+            size++;
+            return;
         }
 
         last.next = newNode;
-        newNode.previous = last ; 
-        newNode.next = null ;
-        size ++ ; 
-
+        newNode.previous = last;
+        newNode.next = null;
+        size++;
     }
 
-    
-    
-    public Node getNode(int index){
-        Node temp = head ; 
-        for ( int i = 0 ; i < index ; i++){
-            temp = temp.next ; 
+    public void insertIndex(int value, int index) {
+        Node newNode = new Node(value);
+
+        if (index == 0) {
+            insertFirst(value);
+            return;
         }
-        return temp ; 
-    }
-    public int getNodeValue(int index){
-        Node temp = head ; 
-        for ( int i = 0 ; i < index ; i++){
-            temp = temp.next ; 
+        if (index == size) {
+            insertLast(value);
+            return;
         }
-        return temp.value ; 
+
+        Node temp = getNode(index - 1);
+        newNode.previous = temp;
+        newNode.next = temp.next;
+        temp.next = newNode;
+        size++;
+
+    }
+
+    public int deleteFirst(){
+        int tobeDeleted = head.value ; 
+        head = head.next ; 
+        head.previous = null ;   
+        return tobeDeleted ; 
     }
 
 
+    public Node getNode(int index) {
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
 
-    public void displayNode(){
-        Node temp = head ; 
-        while(temp != null){
+    public int getNodeValue(int index) {
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp.value;
+    }
+
+    public void displayNode() {
+        Node temp = head;
+        while (temp != null) {
             System.out.print(temp.value + " ~>");
-            temp = temp.next ; 
+            temp = temp.next;
         }
 
         System.out.println("null");
     }
 
-    public void displayReverse(){
-        Node temp = head ; 
-        Node last = temp ; 
-        
-        //take last to tailNode
-        while(temp != null){
-            last = temp ; 
-            temp = temp.next; 
+    public void displayReverse() {
+        Node temp = head;
+        Node last = temp;
+
+        // take last to tailNode
+        while (temp != null) {
+            last = temp;
+            temp = temp.next;
         }
         System.out.print("null");
-        while(last !=null){
-            System.out.print(" <~ "+ last.value);
-            last = last.previous ; 
+        while (last != null) {
+            System.out.print(" <~ " + last.value);
+            last = last.previous;
         }
     }
 
