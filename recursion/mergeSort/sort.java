@@ -1,4 +1,4 @@
-package Data_Structures_and_algorithms.recursion.mergeSort;
+package recursion.mergeSort;
 
 import java.util.Arrays;
 
