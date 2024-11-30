@@ -9,6 +9,7 @@ public class permutation_string {
         ArrayList<String> ans = new ArrayList<String>();
         helper2("", "abcd", ans);
         System.out.println(ans.toString());
+        System.out.println(permuationsCount("","abc"));
     }
 
     static void permuations(String p , String up){
