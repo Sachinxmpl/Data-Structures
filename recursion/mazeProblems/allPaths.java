@@ -1,4 +1,5 @@
 package recursion.mazeProblems;
+//can go one step right or one step down 
 
 public class allPaths {
     public static void main(String[] args) {
