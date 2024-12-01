@@ -1,4 +1,4 @@
-package linear_structures.stacksAndQueues.Basics;
+package linear_structures.stacksAndQueues.part2;
 
 import java.util.* ; 
 
