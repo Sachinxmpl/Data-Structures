@@ -81,3 +81,25 @@ public class Tree {
     }
 
 }
+
+
+
+
+//Complexity analysis of the fuction 
+
+//Populate function 
+
+//Time 
+//Each node is visited exactly once 
+//For each node , constant time operatios are performed 
+//There for tree with n nodes 
+// time complexity is O(n)
+
+//Space 
+//Depends on recursion stack 
+//If h is height of recursion case 
+// in worst case space complexity is O(h)
+
+// SImilary for display function 
+// Time O(n)
+//Space O(height of recursion tree)
