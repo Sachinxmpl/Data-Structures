@@ -1,16 +1,31 @@
 package dynamic_linear_structures.linkedList.problems;
 
-public class bubble_sort {
+public class reverseLinkedList {
     public static void main(String[] args) {
         LL test = new LL();
         int a = 200 ; 
-        for ( int i = 0 ; i < 3 ; i++){
+        for ( int i = 0 ; i < 5 ; i++){
             test.insert(i, i + a );
             a = a/2 ; 
         }
         test.displayNodes();
-        test.bubbleSort();
+
+        test.reverse();
         test.displayNodes();
+    }
+}
+
+
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        if(head == null || head.next == null){
+            return head ; 
+        }
+        ListNode newHead = reverseList(head.next);
+        head.next.next = head ;
+        head.next = null ;
+        return newHead ;
     }
 }
 
@@ -22,43 +37,19 @@ class LL{
         this.size = 0; 
     }
 
-
-    //bubble sort
-    public void bubbleSort(){
-        sort(size-1 , 0);
+    public void reverse(){
+        Node tail  = reverse(head);
+        tail.next = null ; 
     }
-    public void sort(int row , int col){
-        if(row == 0){
-            return ;
+    public Node reverse(Node node){
+        if(node.next == null){
+            head = node ; 
+            return node ; 
         }
-        if(col < row){
-            Node f = getNode(col);
-            Node s = getNode(col+1);
-            if(f.value > s.value){
-                if(f == head){
-                    f.next = s.next;
-                    head = s ; 
-                    head.next = f; 
-                }
-                else if(s == tail){
-                    Node prev = getNode(col-1);
-                    prev.next = tail ; 
-                    tail.next = f ; 
-                    tail = f ; 
-                }else{
-                    Node prev = getNode(col-1);
-                    prev.next = s ; 
-                    f.next = s.next ; 
-                    s.next = f ; 
-
-                }
-            }
-            sort(row , col+1);
-        }
-        sort(row-1,0);
+        Node currnode = reverse(node.next);
+        currnode.next = node;
+        return node;
     }
-
-
 
 
 
