@@ -5,7 +5,7 @@ public class inplaceReversal {
 }
 
 //leetcode problem 206 
-
+//https://leetcode.com/problems/reverse-linked-list/
 
 /**
  * Definition for singly-linked list.
@@ -34,7 +34,7 @@ class Solution {
                 future = future.next ; 
             }
         }
-
-        return previous  ; 
+        head = previous ; 
+        return head  ; 
     }
 }
