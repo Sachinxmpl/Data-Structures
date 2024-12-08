@@ -10,5 +10,22 @@ public class main {
         System.out.println(queue.insert(30));
         System.out.println(queue.insert(33));
         System.out.println(queue.remove());
+
+
+
+        //circular queue
+        CircularQueue cq = new CircularQueue() ;
+        cq.insert(10);
+        cq.insert(20);
+        cq.insert(40);
+        cq.insert(50);
+        cq.insert(60);
+        cq.display();
+        System.out.println();
+
+        cq.remove();
+        cq.remove();
+        cq.insert(100);
+        cq.display();
     }
 }
