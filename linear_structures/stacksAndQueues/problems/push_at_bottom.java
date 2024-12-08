@@ -3,21 +3,25 @@ package linear_structures.stacksAndQueues.problems;
 import java.util.Stack;
 
 public class push_at_bottom {
-    public static void main(String[] args) {
-        Stack<Integer> s = new Stack<Integer>();
-        s.push(32);
-        s.push(43);
-        s.push(2342);
-        System.out.println(s.size());
-    }
+   public static void main(String[] args) {
+        Stack<Integer> sc = new Stack<>() ; 
 
-    static void insertLast(int x , Stack<Integer> s){
-        if(s.isEmpty()){
-            s.push(x);
+        insertAtBottom(10 , sc) ; 
+        insertAtBottom(230,sc);
+        insertAtBottom(140, sc) ; 
+        insertAtBottom(500,sc);
+        insertAtBottom(12,sc);
+        System.out.println(sc);
+
+   }
+   //time O(n) space O(n)
+   static void insertAtBottom(int val , Stack<Integer>sc){
+        if(sc.empty()){
+            sc.push(val) ; 
             return ; 
         }
-        int val = s.pop();
-        insertLast(x, s);
-        s.push(val);
-    }
+        int curr = sc.pop() ; 
+        insertAtBottom(val, sc);
+        sc.push(curr) ; 
+   }
 }
