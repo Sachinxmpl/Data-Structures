@@ -8,6 +8,7 @@ public class Binary_tree_level_order_traversal__1 {
 
 
 
+
 //leetcode problem 102
 //https://leetcode.com/problems/binary-tree-level-order-traversal/
 
@@ -61,3 +62,17 @@ class Solution {
         return ans;
     }
 }
+
+
+//Time 
+//Each node is visited exactly once udring traversal 
+//adding to queue O(1)
+//time complexity O(n)
+
+
+//Space 
+//queue holds nodes by level 
+// queue holds all nodes of a level at a time 
+//worst case maximum nodes in level ==  n/2  n is total nodex
+
+//so space O(n/2)
