@@ -53,3 +53,5 @@ class Solution {
         storeInQue(node.right) ; 
     }
 }
+
+//time ans space O(n)
