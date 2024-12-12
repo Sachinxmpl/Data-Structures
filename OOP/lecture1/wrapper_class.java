@@ -13,10 +13,11 @@ public class wrapper_class {
                 swap2(c , d) ;
                 System.out.println("Value of C is : " + c);
                 System.out.println("Value of D is : " + d); 
-                //notice the value is still no swapped because Integer class is defined with final keyword 
+                //notice the value is still not swapped because Integer class is defined with final keyword 
 
+                // num = 20 ; 
                 final int num = 10 ; 
-                // num = 20 ; // this will give compilation error because final keyword is used to define the variable and it cannot be changed after its definition.
+                // this will give compilation error because final keyword is used to define the variable and it cannot be changed after its definition.
         } 
         static void swap2(Integer a , Integer b){
                 Integer temp = a ; 
