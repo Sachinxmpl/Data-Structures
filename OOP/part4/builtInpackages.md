@@ -2,7 +2,7 @@ Some importat java in-Built packages
 
 # Java -> main folder 
 
-### lang 
+### lang package 
 Contains java language specific stuffs 
 eg operations we do + , - and all these basic stuffs 
 imported automatically 
@@ -18,7 +18,7 @@ files
 ### util 
 contains utility classes 
 Datastructures , Collection frameworks 
-ArrayList , Arrays
+ArrayList , Arrays ,  Deque , Queue , LinkedList are some Datastructures and collection frameworks 
 
 ### awt 
 For gui applications
