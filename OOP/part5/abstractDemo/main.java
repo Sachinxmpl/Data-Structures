@@ -9,12 +9,13 @@ public class main {
         
         Daughter shila = new Daughter(12);
         shila.partner("suman",23);
-
+        shila.normalFucntion();
 
         // Parent p = new Parent() error abnstract class 
 
         //calling static methods of abstract class 
         Parent.hello();
+        Son.hello();
 
 
     }   

@@ -1,6 +1,6 @@
 package OOP.part5.interfaces;
 
-public class Car implements Engine , Brake {
+public class Car1 implements Engine , Brake {
 
     @Override
     public void brake(){
