@@ -1,69 +1,78 @@
 package dynamic_linear_structures.linkedList.problems;
 
 public class reorder_linked_list {
-    
+
 }
 
-//Leetcode problem 
-//https://leetcode.com/problems/reorder-list/
+// Leetcode problem
+// https://leetcode.com/problems/reorder-list/
 
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
+// Definition for singly-linked list.
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode() {
+    }
+    ListNode(int val) {
+        this.val = val;
+    }
+    ListNode(int val, ListNode next) {
+        this.val = val;
+        this.next = next;
+    }
+}
+
 class Solution {
     public void reorderList(ListNode head) {
-        if(head == null || head.next == null){
-            return ; 
+        if (head == null || head.next == null) {
+            return;
         }
-        ListNode mid = getMid(head) ; 
-        ListNode secondHead = reverseList(mid) ; 
+        ListNode mid = getMid(head);
+        ListNode secondHead = reverseList(mid.next);
+        mid.next = null;
 
-        ListNode firstHead = head; 
-        while(firstHead != null && secondHead != null){
-            ListNode temp = firstHead.next ; 
-            firstHead.next = secondHead ; 
-            firstHead = temp ; 
+        ListNode firstHead = head;
 
-            temp = secondHead.next ; 
-            secondHead.next = firstHead ; 
-            secondHead = temp ;  
+        while (firstHead != null && secondHead != null) {
+            ListNode temp1 = firstHead.next;
+            ListNode temp2 = secondHead.next;
+
+            firstHead.next = secondHead;
+            secondHead.next = temp1;
+
+            secondHead = temp2;
+            firstHead = temp1;
+
         }
-        
-        //next of tail to null 
-        if(firstHead != null){
-            firstHead.next = null  ; 
-        }
+
     }
 
-    ListNode reverseList(ListNode head){
-        ListNode previous = null ; 
-        ListNode current = head ; 
-        ListNode next = current.next ; 
-        while(current != null){
-            current.next = previous ; 
-            previous = current ; 
-            current = next ; 
-            if(next != null){
-                next = next.next ; 
+    ListNode getMid(ListNode head) {
+        ListNode s = head;
+        ListNode f = head;
+        while (f != null && f.next != null) {
+            s = s.next;
+            f = f.next.next;
+        }
+        return s;
+    }
+
+    ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode next = curr.next;
+        while (curr != null) {
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            if (next != null) {
+                next = next.next;
             }
         }
-        return previous ;
-    }
 
-    ListNode getMid(ListNode head){
-        ListNode slow = head; 
-        ListNode fast = head; 
-        while(fast != null && fast.next != null){
-            fast = fast.next.next ; 
-            slow = slow.next ; 
-        }
-        return slow ; 
+        return prev;
     }
 }
