@@ -77,64 +77,60 @@ class Solution {
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
 class Solution2 {
     public boolean isPalindrome(ListNode head) {
-        if(head == null || head.next == null){
-            return true ; 
+        if (head == null || head.next == null) {
+            return true;
         }
+
         ListNode mid = getMid(head);
-        ListNode headSecond = reverseList(mid)  ; 
-        ListNode storeHeadSecond = headSecond ;
+        ListNode secondHead = reverse(mid);
 
-
-        //compare 
-        while(head != null && headSecond != null){
-            if(head.val != headSecond.val){
-                break;
+        while (secondHead != null) {
+            if (secondHead.val != head.val) {
+                return false;
             }
-            head = head.next ; 
-            headSecond = headSecond.next ; 
-        } 
-
-        reverseList(storeHeadSecond);
-        if(head == null || headSecond == null){
-            return true ; 
+            secondHead = secondHead.next;
+            head = head.next;
         }
-        return false  ; 
-
-    
-
-
+        return true;
     }
 
-    ListNode reverseList(ListNode head){
-        if(head == null || head.next == null){
-            return head ;
+    ListNode reverse(ListNode mid) {
+        if (mid == null) {
+            return mid;
         }
-        ListNode previous = null ; 
-        ListNode current = head ;
-        ListNode next = current.next ; 
-        while(current != null){
-            current.next = previous  ; 
-            previous = current ; 
-            current = next ; 
-            if(next != null){
-                next = next.next ; 
+        ListNode prev = null;
+        ListNode curr = mid;
+        ListNode next = curr.next;
+        while (curr != null) {
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            if (next != null) {
+                next = next.next;
             }
         }
-
-        return previous ; 
+        return prev;
     }
 
-    ListNode getMid(ListNode head){
-        ListNode fast = head; 
-        ListNode slow = head ; 
-
-        while(fast != null && fast.next != null){
-            fast = fast.next.next ; 
-            slow = slow.next ; 
+    ListNode getMid(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
-
-        return slow ; 
+        return slow;
     }
 }
