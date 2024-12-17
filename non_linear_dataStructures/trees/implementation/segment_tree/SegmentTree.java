@@ -3,12 +3,12 @@ package non_linear_dataStructures.trees.segment_tree;
 public class SegmentTree {
     Node root;
 
+    
+    // construct tree time complexity O(n) to make each node  Space complexity to store array as tree O(n) and for recursion stack O(logn)  overall O(n) + O(logn)
+
     public void constructTree(int[] nums) {
         this.root = constructTree(nums, 0, nums.length - 1);
     }
-
-    // construct tree
-    // takes O(N) space
     public Node constructTree(int[] nums, int s, int e) {
         if (s == e) {
             Node leafNode = new Node(s, e);
