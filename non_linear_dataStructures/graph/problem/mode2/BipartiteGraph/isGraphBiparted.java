@@ -1,4 +1,4 @@
-package Data_Structures_and_algorithms.non_linear_dataStructures.graph.problem.mode2;
+package Data_Structures_and_algorithms.non_linear_dataStructures.graph.problem.mode2.BipartiteGraph;
 import java.util.* ; 
 
 public class isGraphBiparted {
