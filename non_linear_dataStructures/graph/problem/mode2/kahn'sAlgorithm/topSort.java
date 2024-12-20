@@ -2,10 +2,23 @@ package Data_Structures_and_algorithms.non_linear_dataStructures.graph.problem.m
 import java.util.* ; 
 
 
+
+//? Kahn's algorithm 
+//Every node has indegree and outdegree . In DAG(Directed Acycle Graph) there is atlest one vertex with indegree 0 and atleast 1 vertex with outdegree 0
+//approach 
+//FInd the indegree for each vertex 
+//The one with lowest (0) indegree comes at first of the top sort 
+//And then iterate , this and that 
+
+
 public class topSort {
     
 }
+//geeks for geeks 
+//https://www.geeksforgeeks.org/problems/topological-sort/1
 
+//!Time complexity O(V+E)
+//!Auxilarry space complexity O(V)
 
 class Solution {
     // Function to return list containing vertices in Topological order.
