@@ -1,4 +1,5 @@
 package Data_Structures_and_algorithms.non_linear_dataStructures.graph.problem.mode2;
+import java.util.* ; 
 
 public class isGraphBiparted {
     
@@ -8,7 +9,38 @@ public class isGraphBiparted {
 //https://leetcode.com/problems/is-graph-bipartite/description/
 
 
+class Solution {
+    public boolean isBipartite(int[][] graph) {
+        int size = graph.length;
+        int[] color = new int[size];
+        for (int i = 0; i < size; i++) {
+            color[i] = -1;
+        }
 
+        for (int i = 0; i < size; i++) {
+            if (color[i] == -1) {
+                Queue<Integer> que = new LinkedList<>();
+                que.add(i);
+                color[i] = 5;
+                while (!que.isEmpty()) {
+                    int x = que.poll();
+                    for (int j = 0; j < graph[x].length; j++) {
+                        int temp = graph[x][j];
+                        if (color[temp] == color[x]) {
+                            return false;
+                        }
+                        if (color[temp] == -1) {
+                            color[temp] = color[x] == 5 ? 0 : 5;
+                            que.add(temp);
+                        }
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+}
 
 
 
@@ -28,17 +60,17 @@ public class isGraphBiparted {
 
 // Online Java Compiler
 // Use this editor to write, compile and run your Java code online
-import java.util.* ; 
 
-class Main {
-    public static void main(String[] args) {
-        Graph gh = new Graph(14) ; 
-        gh.createGraph() ; 
-        System.out.println(gh.hasCycle()) ; 
-        gh.BFS() ; 
-        System.out.println(gh.isBipartite()) ; 
-    }
-}
+
+// class Main {
+//     public static void main(String[] args) {
+//         Graph gh = new Graph(14) ; 
+//         gh.createGraph() ; 
+//         System.out.println(gh.hasCycle()) ; 
+//         gh.BFS() ; 
+//         System.out.println(gh.isBipartite()) ; 
+//     }
+// }
 
 class Graph{
      private static class Edge {
