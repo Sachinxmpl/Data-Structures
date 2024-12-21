@@ -1,4 +1,4 @@
-package Data_Structures_and_algorithms.recursion.Arrays;
+package recursion.Arrays;
 
 
 public class rotated_binary_search {
