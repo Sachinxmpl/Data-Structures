@@ -13,7 +13,7 @@ import java.util.Arrays;
 //But we need to keep track of the previous step , whenvever we move to next step , make the current step false so we don't return back 
 //Also the false should again be made true when recursion calls gets over so it doesn't affect other path
 
-public class allPaths {
+public class BacktrackingMaze {
     public static void main(String[] args) {
         boolean[][] board = {
                 { true, true, true },
