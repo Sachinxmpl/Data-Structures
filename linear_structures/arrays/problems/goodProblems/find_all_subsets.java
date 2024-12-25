@@ -1,4 +1,4 @@
-package Data_Structures_and_algorithms.linear_structures.arrays.problems.goodProblems;
+package linear_structures.arrays.problems.goodProblems;
 
 import java.util.*;
 

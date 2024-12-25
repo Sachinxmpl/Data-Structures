@@ -1,4 +1,4 @@
-package Data_Structures_and_algorithms.recursion.patternsANDsort;
+package recursion.patternsANDsort;
 
 import java.util.Arrays;
 

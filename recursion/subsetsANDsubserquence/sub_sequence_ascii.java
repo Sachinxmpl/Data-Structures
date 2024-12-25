@@ -1,4 +1,4 @@
-package Data_Structures_and_algorithms.recursion.subsetsANDsubserquence;
+package recursion.subsetsANDsubserquence;
 
 public class sub_sequence_ascii {
     public static void main(String[] args) {

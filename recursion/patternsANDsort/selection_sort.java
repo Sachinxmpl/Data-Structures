@@ -1,4 +1,4 @@
-package Data_Structures_and_algorithms.recursion.patternsANDsort;
+package recursion.patternsANDsort;
 
 import java.util.Arrays;
 
@@ -35,7 +35,7 @@ public class selection_sort {
     static void sort(int[] nums){
         for ( int i = 0 ;i < nums.length -1 ; i++){
             int min = i; 
-            for ( int j = i+ 1 ; j < nums.length ; j++){
+            for ( int j = i + 1 ; j < nums.length ; j++){
                 if(nums[j] < nums[min]){
                     min = j;
                 }

@@ -1,4 +1,4 @@
-package Data_Structures_and_algorithms.recursion.subsetsANDsubserquence;
+package recursion.subsetsANDsubserquence;
 
 import java.util.ArrayList;
 
