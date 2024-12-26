@@ -8,6 +8,22 @@ public class insertion_sort {
                 System.out.println(Arrays.toString(nums));
         }
 
+        //Worst and average case complexity of this code is O(n2) whereas the best case if O(1)
+        static void bestInsertionSort(int[]arr){
+                int n = arr.length ; 
+                for(int i = 0 ;i < n ; i++){
+                        int j = i ; 
+                        while(j > 0  && arr[j-1] > arr[j]){
+                                //swap 
+                                int temp = arr[j-1] ; 
+                                arr[j-1] = arr[j] ; 
+                                arr[j] = temp ;
+
+                                j-- ; 
+                        }
+                }
+        }
+
         static void insertionSort2(int[] arr) {
                 int n = arr.length;
                 for (int i = 0; i < n - 1; i++) {
