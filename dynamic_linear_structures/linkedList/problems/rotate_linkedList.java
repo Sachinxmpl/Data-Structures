@@ -11,56 +11,49 @@ public class rotate_linkedList {
 /**
  * Definition for singly-linked list.
  * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
 class Solution {
     public ListNode rotateRight(ListNode head, int k) {
-        if(head == null || head.next == null || k <= 0){
-            return head ; 
+        if(k < 1 || head == null || head.next == null){
+            return head; 
         }
-
-
-        ListNode temp = head ; 
-        int length = 0; 
-        while(temp != null){
-            length ++  ; 
-            temp = temp.next; 
-        }
-
-
-
+        int length = getLength(head) ; 
         k = k % length ; 
-        if(k == 0){
-            return head ; 
+        ListNode temp = head; 
+        while(temp.next != null){
+            temp = temp.next ; 
         }
 
+        ListNode currTail = temp ; 
+        currTail.next = head ; 
 
-        ListNode tail = head ; 
-        int x = length; 
-        while(x > 1){
-            tail = tail.next ; 
-            x-- ; 
-        }
-        tail.next = head ; 
+        ListNode pointer = head ; 
+        int shift = length - k ; 
 
-        int steps = length - k ; 
-
-        ListNode newtail = head ; 
-        for ( int i = 1 ; i < steps ; i++){
-            newtail = newtail.next ; 
+        while(shift > 1){
+            shift -- ; 
+            pointer = pointer.next ; 
         }
 
-        ListNode newHead = newtail.next ; 
+        head = pointer.next; 
+        pointer.next = null ; 
 
-        newtail.next = null ; 
-
-        return newHead ; 
-
-        
+        return head; 
+    }
+    
+    int getLength(ListNode head){
+        int length = 0 ; 
+        ListNode temp = head; 
+        while(temp != null){
+            temp = temp.next;  
+            length ++ ; 
+        }
+        return length ; 
     }
 }
