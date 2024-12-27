@@ -39,7 +39,7 @@ class Solution {
     }
 }
 
-class Solution {
+class Solution2 {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         ListNode temp = new ListNode();
         ListNode head = temp;
